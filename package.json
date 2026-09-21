@@ -1,0 +1,42 @@
+{
+  "name": "roster-scheduler",
+  "version": "1.0.0",
+  "description": "中国法定节假日智能排班日历系统",
+  "main": "main.js",
+  "author": "linjiaxuan <your@email.com>", 
+  "scripts": {
+    "start": "electron .",
+    "pack:win-portable": "electron-builder --win portable",
+    "pack:uos-arm64": "electron-builder --linux deb --arm64"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.example.roster-scheduler",
+    "productName": "京西值班排班日历系统",
+    "directories": {
+      "output": "dist"
+    },
+    "icon": "build/icon.png",
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "deb",
+          "arch": ["arm64"]
+        }
+      ],
+      "category": "Utility",
+      "maintainer": "linjiaxuan <your@email.com>"
+    }
+  }
+}
